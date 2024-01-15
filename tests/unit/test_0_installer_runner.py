@@ -24,6 +24,10 @@ def describe_rgb():
         """🧪 should return 000000 for 0, 0, 0"""
         assert rgb_to_hex_conversion.rgb(0, 0, 0) == "000000"
 
-    def should_return_ffffff():
-        """🧪 should return ffffff for 255, 255, 255"""
-        assert rgb_to_hex_conversion.rgb(255, 255, 255) == "ffffff"
+    def should_return_FFFFFF():
+        """🧪 should return FFFFFF for 255, 255, 255"""
+        assert rgb_to_hex_conversion.rgb(255, 255, 255) == "FFFFFF"
+
+    def should_return_9400D3():
+        """🧪 should return 9400D3 for 148, 0, 211"""
+        assert rgb_to_hex_conversion.rgb(148, 0, 211) == "9400D3"
