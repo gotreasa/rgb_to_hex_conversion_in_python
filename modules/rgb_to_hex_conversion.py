@@ -5,23 +5,15 @@ def extract_hex_code(decimal_number: int) -> str:
     return result
 
 
+colours = {0: "red", 1: "green", 2: "blue"}
+
+
 def rgb(red: int, green: int, blue: int) -> str:
-    if not isinstance(red, int):
-        raise ValueError("❗️ Value for red should be an integer")
-    if red > 255:
-        raise ValueError("❗️ Value for red should be 255 or less")
-    if red < 0:
-        raise ValueError("❗️ Value for red should be 0 or greater")
-    if not isinstance(green, int):
-        raise ValueError("❗️ Value for green should be an integer")
-    if green > 255:
-        raise ValueError("❗️ Value for green should be 255 or less")
-    if green < 0:
-        raise ValueError("❗️ Value for green should be 0 or greater")
-    if not isinstance(blue, int):
-        raise ValueError("❗️ Value for blue should be an integer")
-    if blue > 255:
-        raise ValueError("❗️ Value for blue should be 255 or less")
-    if blue < 0:
-        raise ValueError("❗️ Value for blue should be 0 or greater")
+    for index, color in enumerate([red, green, blue]):
+        if not isinstance(color, int):
+            raise ValueError(f"❗️ Value for {colours[index]} should be an integer")
+        if color > 255:
+            raise ValueError(f"❗️ Value for {colours[index]} should be 255 or less")
+        if color < 0:
+            raise ValueError(f"❗️ Value for {colours[index]} should be 0 or greater")
     return "".join([extract_hex_code(red), extract_hex_code(green), extract_hex_code(blue)])
