@@ -12,3 +12,8 @@ def describe_rgb():
         """🧪 should error if any of the second input is not an integer"""
         with pytest.raises(ValueError, match="❗️ Value for green should be an integer"):
             rgb_to_hex_conversion.rgb(2, "blah", 2)
+
+    def should_error_when_third_input_is_not_integer():
+        """🧪 should error if any of the third input is not an integer"""
+        with pytest.raises(ValueError, match="❗️ Value for blue should be an integer"):
+            rgb_to_hex_conversion.rgb(2, 2, "blah")
