@@ -8,6 +8,8 @@ def extract_hex_code(decimal_number: int) -> str:
 def rgb(red: int, green: int, blue: int) -> str:
     if not isinstance(red, int):
         raise ValueError("❗️ Value for red should be an integer")
+    if red > 255:
+        raise ValueError("❗️ Value for red should be 255 or less")
     if not isinstance(green, int):
         raise ValueError("❗️ Value for green should be an integer")
     if not isinstance(blue, int):
