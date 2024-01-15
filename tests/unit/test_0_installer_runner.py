@@ -23,3 +23,7 @@ def describe_rgb():
     def should_return_000000():
         """🧪 should return 000000 for 0, 0, 0"""
         assert rgb_to_hex_conversion.rgb(0, 0, 0) == "000000"
+
+    def should_return_ffffff():
+        """🧪 should return ffffff for 255, 255, 255"""
+        assert rgb_to_hex_conversion.rgb(255, 255, 255) == "ffffff"
