@@ -35,8 +35,13 @@ def describe_rgb_guardians():
 
     def should_error_when_first_input_is_less_than_0():
         """🧪 should error if any of the first input is less than 0"""
-        with pytest.raises(ValueError, match="❗️ Value for red should be 0 or great"):
+        with pytest.raises(ValueError, match="❗️ Value for red should be 0 or greater"):
             rgb_to_hex_conversion.rgb(-1, 2, 2)
+
+    def should_error_when_second_input_is_less_than_0():
+        """🧪 should error if any of the second input is less than 0"""
+        with pytest.raises(ValueError, match="❗️ Value for green should be 0 or greater"):
+            rgb_to_hex_conversion.rgb(2, -1, 2)
 
 
 def describe_rgb():

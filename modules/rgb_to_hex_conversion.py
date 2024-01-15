@@ -16,6 +16,8 @@ def rgb(red: int, green: int, blue: int) -> str:
         raise ValueError("❗️ Value for green should be an integer")
     if green > 255:
         raise ValueError("❗️ Value for green should be 255 or less")
+    if green < 0:
+        raise ValueError("❗️ Value for green should be 0 or greater")
     if not isinstance(blue, int):
         raise ValueError("❗️ Value for blue should be an integer")
     if blue > 255:
