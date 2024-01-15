@@ -22,4 +22,6 @@ def rgb(red: int, green: int, blue: int) -> str:
         raise ValueError("❗️ Value for blue should be an integer")
     if blue > 255:
         raise ValueError("❗️ Value for blue should be 255 or less")
+    if blue < 0:
+        raise ValueError("❗️ Value for blue should be 0 or greater")
     return "".join([extract_hex_code(red), extract_hex_code(green), extract_hex_code(blue)])

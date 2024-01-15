@@ -43,6 +43,11 @@ def describe_rgb_guardians():
         with pytest.raises(ValueError, match="❗️ Value for green should be 0 or greater"):
             rgb_to_hex_conversion.rgb(2, -1, 2)
 
+    def should_error_when_third_input_is_less_than_0():
+        """🧪 should error if any of the third input is less than 0"""
+        with pytest.raises(ValueError, match="❗️ Value for blue should be 0 or greater"):
+            rgb_to_hex_conversion.rgb(2, 2, -1)
+
 
 def describe_rgb():
     def should_return_000000():
