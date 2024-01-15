@@ -3,4 +3,6 @@ def rgb(red: int, green: int, blue: int) -> str:
         raise ValueError("❗️ Value for green should be an integer")
     if not isinstance(blue, int):
         raise ValueError("❗️ Value for blue should be an integer")
+    if red == 0 and green == 0 and blue == 0:
+        return "000000"
     raise ValueError("❗️ Value for red should be an integer")

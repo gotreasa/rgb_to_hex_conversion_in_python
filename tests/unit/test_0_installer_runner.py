@@ -2,7 +2,7 @@ import pytest
 from modules import rgb_to_hex_conversion
 
 
-def describe_rgb():
+def describe_rgb_guardians():
     def should_error_when_first_input_is_not_integer():
         """🧪 should error if any of the first input is not an integer"""
         with pytest.raises(ValueError, match="❗️ Value for red should be an integer"):
@@ -17,3 +17,9 @@ def describe_rgb():
         """🧪 should error if any of the third input is not an integer"""
         with pytest.raises(ValueError, match="❗️ Value for blue should be an integer"):
             rgb_to_hex_conversion.rgb(2, 2, "blah")
+
+
+def describe_rgb():
+    def should_return_000000():
+        """🧪 should return 000000 for 0, 0, 0"""
+        assert rgb_to_hex_conversion.rgb(0, 0, 0) == "000000"
