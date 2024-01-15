@@ -28,6 +28,11 @@ def describe_rgb_guardians():
         with pytest.raises(ValueError, match="❗️ Value for green should be 255 or less"):
             rgb_to_hex_conversion.rgb(2, 256, 2)
 
+    def should_error_when_third_input_is_greater_than_255():
+        """🧪 should error if any of the third input is greater than 255"""
+        with pytest.raises(ValueError, match="❗️ Value for blue should be 255 or less"):
+            rgb_to_hex_conversion.rgb(2, 2, 256)
+
 
 def describe_rgb():
     def should_return_000000():
